@@ -1,13 +1,21 @@
 *,
-*::after,
-*::before {
+*::before,
+*::after {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  box-sizing: inherit;
 }
 
 html {
+  box-sizing: border-box;
 }
 
 body {
+  padding: 30px;
+}
+
+main {
+  min-height: 90vh;
+  padding: 80px 60px;
+  background-color: #f7f7f7;
 }
