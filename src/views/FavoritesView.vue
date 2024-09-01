@@ -10,13 +10,6 @@
       </div>
 
       <MoviesListing :movies="favorites" />
-
-      <!--      <TransitionGroup name="list">-->
-      <!--        <div v-for="movie in favorites" :key="movie.id">-->
-      <!--          <MoviesCard :movie="movie" />-->
-      <!--          <button @click.prevent="removeFavorite(movie)">Remover</button>-->
-      <!--        </div>-->
-      <!--      </TransitionGroup>-->
     </div>
   </main>
 </template>
