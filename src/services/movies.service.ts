@@ -1,4 +1,3 @@
-// movies.service.ts
 import api from '@/services/api.service'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
 

@@ -1,5 +1,3 @@
-// store.ts
-
 import { createLogger, createStore } from 'vuex'
 import MoviesService from '@/services/movies.service'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'

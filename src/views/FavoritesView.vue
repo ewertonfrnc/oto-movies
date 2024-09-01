@@ -1,5 +1,7 @@
 <template>
-  <h1>Favoritos</h1>
+  <main>
+    <h1>Favoritos</h1>
+  </main>
 </template>
 
 <script setup lang="ts"></script>
