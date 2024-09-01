@@ -1,0 +1,36 @@
+.btn {
+  font-size: 16px;
+  font-weight: 400;
+  padding: 14px 30px;
+  border-radius: 100px;
+  display: inline-block;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: all 0.4s;
+  backface-visibility: hidden;
+  border: none;
+  cursor: pointer;
+
+  &:hover {
+    transform: translateY(-3px);
+  }
+
+  &:active {
+    transform: translateY(-1px);
+  }
+
+  &:focus {
+    outline: none;
+    background-color: $pink-primary;
+  }
+
+  &__rounded {
+    padding: 14px;
+    height: 48px;
+    width: 48px;
+
+    &:hover {
+      transform: translateY(0);
+    }
+  }
+}

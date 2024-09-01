@@ -1,9 +1,6 @@
 <template>
   <main>
-    <div>
-      <button @click="back">Voltar</button>
-      <h1>Detalhes</h1>
-    </div>
+    <PageHeader label="Detalhes" />
 
     <div v-if="!movie">Carregando...</div>
 
@@ -29,6 +26,7 @@ import { computed, onMounted, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
+import PageHeader from '@/components/PageHeader.vue'
 
 const store = useStore()
 const route = useRoute()

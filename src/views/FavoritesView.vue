@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1>Favoritos</h1>
+    <PageHeader label="Favoritos" />
 
     <div v-if="!favorites.length">
       <p>Não há filmes favoritados</p>
@@ -27,6 +27,7 @@ import { computed, type ComputedRef } from 'vue'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
 import MoviesCard from '@/components/MoviesCard.vue'
 import MoviesListing from '@/components/MoviesListing.vue'
+import PageHeader from '@/components/PageHeader.vue'
 
 const store = useStore()
 

@@ -1,6 +1,6 @@
 <template>
   <main>
-    <h1>HOME</h1>
+    <PageHeader label="Filmes" />
 
     <div v-if="!movies.length">Carregando...</div>
 
@@ -13,6 +13,7 @@ import { onMounted, ref } from 'vue'
 import { useStore } from 'vuex'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
 import MoviesListing from '@/components/MoviesListing.vue'
+import PageHeader from '@/components/PageHeader.vue'
 
 const store = useStore()
 
