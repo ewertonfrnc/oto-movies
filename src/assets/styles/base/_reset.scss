@@ -20,3 +20,9 @@ main {
   background-color: $black-primary;
   color: $text-color-primary;
 }
+
+a:link,
+a:visited {
+  color: $text-color-primary;
+  text-decoration: none;
+}
