@@ -9,12 +9,14 @@
     <div v-else>
       <button @click.prevent="clearFavorites">Limpar lista</button>
 
-      <TransitionGroup name="list">
-        <div v-for="movie in favorites" :key="movie.id">
-          <MoviesCard :movie="movie" />
-          <button @click.prevent="removeFavorite(movie)">Remover</button>
-        </div>
-      </TransitionGroup>
+      <MoviesListing :movies="favorites" />
+
+      <!--      <TransitionGroup name="list">-->
+      <!--        <div v-for="movie in favorites" :key="movie.id">-->
+      <!--          <MoviesCard :movie="movie" />-->
+      <!--          <button @click.prevent="removeFavorite(movie)">Remover</button>-->
+      <!--        </div>-->
+      <!--      </TransitionGroup>-->
     </div>
   </main>
 </template>
@@ -24,6 +26,7 @@ import { useStore } from 'vuex'
 import { computed, type ComputedRef } from 'vue'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
 import MoviesCard from '@/components/MoviesCard.vue'
+import MoviesListing from '@/components/MoviesListing.vue'
 
 const store = useStore()
 

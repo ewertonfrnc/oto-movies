@@ -2,9 +2,9 @@
   <main>
     <h1>HOME</h1>
 
-    <div class="movies">
-      <MoviesCard v-for="movie in movies" :key="movie.id" :movie="movie" />
-    </div>
+    <div v-if="!movies.length">Carregando...</div>
+
+    <MoviesListing v-else :movies="movies" />
   </main>
 </template>
 
@@ -12,7 +12,7 @@
 import { onMounted, ref } from 'vue'
 import { useStore } from 'vuex'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
-import MoviesCard from '@/components/MoviesCard.vue'
+import MoviesListing from '@/components/MoviesListing.vue'
 
 const store = useStore()
 
