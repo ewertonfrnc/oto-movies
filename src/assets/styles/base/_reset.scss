@@ -17,5 +17,6 @@ body {
 main {
   min-height: 90vh;
   padding: 80px 60px;
-  background-color: #f7f7f7;
+  background-color: $black-primary;
+  color: $text-color-primary;
 }
