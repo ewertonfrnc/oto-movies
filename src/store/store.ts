@@ -8,8 +8,8 @@ export const store = createStore({
     return { favorites: [] }
   },
   actions: {
-    async loadMovies(): Promise<TMDBMovie[]> {
-      const { results, total_pages } = await MoviesService.loadTopRatedMovies()
+    async loadMovies(state: ActionContext, page: number): Promise<TMDBMovie[]> {
+      const { results, total_pages } = await MoviesService.loadTopRatedMovies(page)
       return { results, total_pages }
     },
     async loadMovie(state: ActionContext, movieId: string) {

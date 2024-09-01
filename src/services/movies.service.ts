@@ -9,9 +9,9 @@ type TMDBApiResponse = {
 }
 
 class MoviesService {
-  async loadTopRatedMovies(): Promise<TMDBApiResponse> {
+  async loadTopRatedMovies(page: number): Promise<TMDBApiResponse> {
     const { data } = await api().get('/movie/top_rated', {
-      params: { language: 'pt-BR' }
+      params: { language: 'pt-BR', page }
     })
 
     return data
