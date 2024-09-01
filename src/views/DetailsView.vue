@@ -5,18 +5,13 @@
     <div v-if="!movie">Carregando...</div>
 
     <div v-else>
-      <button @click.prevent="handleFavoriteStatus(movie)">
-        {{ isFav ? 'Remover' : 'Favoritar' }}
-      </button>
+      <div class="btn-container">
+        <button class="btn" @click.prevent="handleFavoriteStatus(movie)">
+          {{ isFav ? 'Remover dos favoritos' : 'Adicionar aos favoritos' }}
+        </button>
+      </div>
 
-      <hr />
-
-      <p>title: {{ movie.title }}</p>
-      <p>tagline: {{ movie.tagline }}</p>
-      <p>overview: {{ movie.overview }}</p>
-      <p>release_date: {{ movie.release_date }}</p>
-      <p>genre_ids: {{ movie.genres }}</p>
-      <p>budget: {{ movie.budget }}</p>
+      <DetailsContent :movie="movie" />
     </div>
   </main>
 </template>
@@ -27,6 +22,8 @@ import { useRoute, useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
 import PageHeader from '@/components/PageHeader.vue'
+import DetailsHeader from '@/components/DetailsContent.vue'
+import DetailsContent from '@/components/DetailsContent.vue'
 
 const store = useStore()
 const route = useRoute()
@@ -68,3 +65,10 @@ onMounted(() => {
   loadMovie()
 })
 </script>
+
+<style scoped lang="scss">
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+}
+</style>
