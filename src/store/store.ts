@@ -1,4 +1,4 @@
-import { createLogger, createStore } from 'vuex'
+import { type ActionContext, createLogger, createStore } from 'vuex'
 import MoviesService from '@/services/movies.service'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
 
@@ -11,6 +11,9 @@ export const store = createStore({
     async loadMovies(): Promise<TMDBMovie[]> {
       const { results, total_pages } = await MoviesService.loadTopRatedMovies()
       return { results, total_pages }
+    },
+    async loadMovie(state: ActionContext, movieId: string) {
+      return await MoviesService.loadMovieDetails(movieId)
     }
   },
   mutations: {},

@@ -16,6 +16,14 @@ class MoviesService {
 
     return data
   }
+
+  async loadMovieDetails(id: string): Promise<TMDBMovie> {
+    const { data } = await api().get(`/movie/${id}`, {
+      params: { language: 'pt-BR' }
+    })
+
+    return data
+  }
 }
 
 export default new MoviesService()
