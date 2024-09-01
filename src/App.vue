@@ -3,9 +3,9 @@ import { RouterView } from 'vue-router'
 </script>
 
 <template>
-  <header>
+  <header class="header">
     <RouterLink to="/">Filmes</RouterLink>
-    <RouterLink to="/favorites">Favorits</RouterLink>
+    <RouterLink to="/favorites">Favoritos</RouterLink>
   </header>
 
   <RouterView />

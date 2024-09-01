@@ -2,12 +2,12 @@
   <main>
     <PageHeader label="Favoritos" />
 
-    <div v-if="!favorites.length">
-      <p>Não há filmes favoritados</p>
-    </div>
+    <FavoritesEmpty v-if="!favorites.length" />
 
     <div v-else>
-      <button @click.prevent="clearFavorites">Limpar lista</button>
+      <div class="btn-container">
+        <button class="btn" @click.prevent="clearFavorites">Limpar lista</button>
+      </div>
 
       <MoviesListing :movies="favorites" />
 
@@ -28,6 +28,7 @@ import type { TMDBMovie } from '@/interfaces/movie.interfaces'
 import MoviesCard from '@/components/MoviesCard.vue'
 import MoviesListing from '@/components/MoviesListing.vue'
 import PageHeader from '@/components/PageHeader.vue'
+import FavoritesEmpty from '@/components/FavoritesEmpty.vue'
 
 const store = useStore()
 
@@ -41,3 +42,11 @@ function removeFavorite(movie) {
   store.dispatch('remove', movie)
 }
 </script>
+
+<style scoped lang="scss">
+.btn-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 16px;
+}
+</style>
