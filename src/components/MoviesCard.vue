@@ -75,6 +75,8 @@ function handleNavigation(movieId: number): void {
   background-color: $black-secondary;
   transition: 0.3s ease;
   overflow: hidden;
+  color: $text-color-primary;
+  text-decoration: none;
 
   &:hover {
     transform: scale(1.05);
