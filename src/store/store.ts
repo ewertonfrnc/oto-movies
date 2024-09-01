@@ -15,19 +15,24 @@ export const store = createStore({
     async loadMovie(state: ActionContext, movieId: string) {
       return await MoviesService.loadMovieDetails(movieId)
     },
+    clear({ commit }: ActionContext) {
+      commit('clearFavorites')
+    },
     add({ commit }: ActionContext, movie: TMDBMovie) {
-      const favMovie = { id: movie.id, title: movie.title }
-      commit('addToFavorites', favMovie)
+      commit('addToFavorites', movie)
     },
     remove({ commit }: ActionContext, movie: TMDBMovie) {
       commit('removeFromFavorites', movie)
     }
   },
   mutations: {
-    addToFavorites(state, favMovie) {
-      state.favorites = [favMovie, ...state.favorites]
+    clearFavorites(state) {
+      state.favorites = []
     },
-    removeFromFavorites(state, movie) {
+    addToFavorites(state, movie: TMDBMovie) {
+      state.favorites = [movie, ...state.favorites]
+    },
+    removeFromFavorites(state, movie: TMDBMovie) {
       state.favorites = state.favorites.filter((favorite) => favorite.id !== movie.id)
     }
   },
