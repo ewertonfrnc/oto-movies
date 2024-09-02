@@ -23,17 +23,17 @@
 
       <div class="card__data">
         <span class="card__icon">🌟 Média dos votos</span>
-        <span> {{ decimalToPercentage(movie.vote_average) }} </span>
+        <span class="card__text--average"> {{ decimalToPercentage(movie.vote_average) }} </span>
       </div>
 
       <div class="card__data">
         <span class="card__icon">👥 Total de votos</span>
-        <span> {{ formatNumber(movie.vote_count) }} </span>
+        <span class="card__text--count"> {{ formatNumber(movie.vote_count) }} </span>
       </div>
 
       <div class="card__data">
         <span class="card__icon">🔥 Popularidade</span>
-        <span> {{ movie.popularity }} </span>
+        <span class="card__text--popularity"> {{ movie.popularity }} </span>
       </div>
 
       <div class="card__data">
