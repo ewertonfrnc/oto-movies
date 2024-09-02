@@ -17,17 +17,17 @@
 
         <p class="details__data">
           <span>🎭 Gênero:</span>
-          <span>{{ genres }}</span>
+          <span class="details__data--genres">{{ genres }}</span>
         </p>
 
         <p class="details__data">
           <span>🎬 Lançamento:</span>
-          <span>{{ formatDate(movie.release_date) }}</span>
+          <span class="details__data--release">{{ formatDate(movie.release_date) }}</span>
         </p>
 
         <p class="details__data">
           <span>💰 Receita:</span>
-          <span>{{ formatCurrency(movie.revenue) }}</span>
+          <span class="details__data--revenue">{{ formatCurrency(movie.revenue) }}</span>
         </p>
       </div>
     </div>
