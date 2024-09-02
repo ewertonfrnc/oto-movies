@@ -33,6 +33,15 @@
     height: 48px;
     width: 48px;
 
+    @include respond(phone) {
+      padding: 14px;
+      height: 24px;
+      width: 24px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
     &:hover {
       transform: translateY(0);
     }

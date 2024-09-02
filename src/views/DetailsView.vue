@@ -65,5 +65,6 @@ onMounted(() => {
 .btn-container {
   display: flex;
   justify-content: flex-end;
+  margin-top: 12px;
 }
 </style>
