@@ -1,27 +1,30 @@
 import { type ActionContext, createLogger, createStore } from 'vuex'
-import MoviesService from '@/services/movies.service'
+import MoviesService, { type TMDBApiResponse } from '@/services/movies.service'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
 
+type State = {
+  favorites: TMDBMovie[]
+}
+
 const debug = import.meta.env.DEV
-export const store = createStore({
+export const store = createStore<State>({
   state() {
     return { favorites: [] }
   },
   actions: {
-    async loadMovies(state: ActionContext, page: number): Promise<TMDBMovie[]> {
-      const { results, total_pages } = await MoviesService.loadTopRatedMovies(page)
-      return { results, total_pages }
+    async loadMovies(state: ActionContext<State, State>, page: number): Promise<TMDBApiResponse> {
+      return await MoviesService.loadTopRatedMovies(page)
     },
-    async loadMovie(state: ActionContext, movieId: string) {
+    async loadMovie(state: ActionContext<State, State>, movieId: string): Promise<TMDBMovie> {
       return await MoviesService.loadMovieDetails(movieId)
     },
-    clear({ commit }: ActionContext) {
+    clear({ commit }: ActionContext<State, State>) {
       commit('clearFavorites')
     },
-    add({ commit }: ActionContext, movie: TMDBMovie) {
+    add({ commit }: ActionContext<State, State>, movie: TMDBMovie) {
       commit('addToFavorites', movie)
     },
-    remove({ commit }: ActionContext, movie: TMDBMovie) {
+    remove({ commit }: ActionContext<State, State>, movie: TMDBMovie) {
       commit('removeFromFavorites', movie)
     }
   },

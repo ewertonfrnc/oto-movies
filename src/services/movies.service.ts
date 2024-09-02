@@ -1,7 +1,7 @@
 import api from '@/services/api.service'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
 
-type TMDBApiResponse = {
+export type TMDBApiResponse = {
   page: number
   results: TMDBMovie[]
   total_results: number
