@@ -106,15 +106,11 @@ const { movie } = defineProps<Props>()
   &__details {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    //grid-row-gap: 17.5px;
-    //grid-column-gap: 20px;
     gap: 20px;
-    //justify-items: center;
     padding: 5px 20px;
   }
 
   &__subheading {
-    //font-size: 12px;
     text-transform: uppercase;
     font-weight: 700;
     grid-column: 1 / -1;
@@ -129,7 +125,6 @@ const { movie } = defineProps<Props>()
   }
 
   &__data {
-    //font-size: 13px;
     display: flex;
     flex-direction: column;
     align-items: baseline;
