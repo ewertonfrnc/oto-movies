@@ -36,6 +36,13 @@
       <h3>Sinopse</h3>
       <p>{{ movie.overview }}</p>
     </div>
+
+    <div class="details__backdrop">
+      <img
+        :src="`${BASE_TMDB_IMAGE_URL}/${movie.backdrop_path}`"
+        :alt="`Poster do filme ${movie.title}`"
+      />
+    </div>
   </div>
 </template>
 
@@ -67,10 +74,13 @@ const genres = computed(() => {
   position: relative;
   margin-top: 16px;
 
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+
   &__poster {
     height: 250px;
     border-radius: 8px;
-    //border: 1px solid $black-primary;
     overflow: hidden;
 
     &--img {
@@ -106,8 +116,18 @@ const genres = computed(() => {
   &__additional {
     padding: 16px;
     border-radius: 8px;
-    margin-top: 8px;
     background-color: $black-secondary;
+  }
+
+  &__backdrop {
+    overflow: hidden;
+    border-radius: 8px;
+
+    img {
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+    }
   }
 }
 </style>

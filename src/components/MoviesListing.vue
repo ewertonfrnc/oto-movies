@@ -13,9 +13,16 @@ const { movies } = defineProps<Props>()
 </script>
 
 <style scoped lang="scss">
+@import '@/assets/styles/abstracts/mixin';
+
 .movies {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 24px;
+
+  @include respond(phone) {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
 }
 </style>

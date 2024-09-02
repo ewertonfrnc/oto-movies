@@ -133,6 +133,7 @@ function emitPageChange(page: number): void {
 
 <style scoped lang="scss">
 @import 'src/assets/styles/abstracts/variables';
+@import 'src/assets/styles/abstracts/mixin';
 
 .pagination {
   list-style: none;
@@ -154,6 +155,11 @@ function emitPageChange(page: number): void {
       transition: 0.3s ease;
       font-size: inherit;
 
+      @include respond(phone) {
+        height: 30px;
+        width: 30px;
+      }
+
       &:not(:disabled) {
         background-color: $black-secondary;
         color: inherit;
@@ -165,6 +171,13 @@ function emitPageChange(page: number): void {
 
       &:disabled {
         border: none;
+      }
+    }
+
+    &--first,
+    &--last {
+      @include respond(phone) {
+        display: none;
       }
     }
   }
