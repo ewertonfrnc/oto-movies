@@ -18,7 +18,6 @@
 import { useStore } from 'vuex'
 import { computed, type ComputedRef } from 'vue'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
-import MoviesCard from '@/components/MoviesCard.vue'
 import MoviesListing from '@/components/MoviesListing.vue'
 import PageHeader from '@/components/PageHeader.vue'
 import FavoritesEmpty from '@/components/FavoritesEmpty.vue'
@@ -29,10 +28,6 @@ const favorites: ComputedRef<TMDBMovie[]> = computed(() => store.state.favorites
 
 function clearFavorites() {
   store.dispatch('clear')
-}
-
-function removeFavorite(movie) {
-  store.dispatch('remove', movie)
 }
 </script>
 

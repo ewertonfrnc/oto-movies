@@ -45,20 +45,12 @@
 </template>
 
 <script setup lang="ts">
-import { useRoute, useRouter } from 'vue-router'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
 import { BASE_TMDB_IMAGE_URL } from '@/utils/tmdb.utils'
-import { decimalToPercentage, formatDate, formatNumber } from '../utils/formatters.utils'
+import { decimalToPercentage, formatDate, formatNumber } from '@/utils/formatters.utils'
 
 type Props = { movie: TMDBMovie }
 const { movie } = defineProps<Props>()
-
-const router = useRouter()
-const route = useRoute()
-
-function handleNavigation(movieId: number): void {
-  router.push(`/movie/${movieId}`)
-}
 </script>
 
 <style scoped lang="scss">
@@ -101,7 +93,7 @@ function handleNavigation(movieId: number): void {
     overflow: hidden;
 
     position: absolute;
-    bottom: 0px;
+    bottom: 0;
     right: 10px;
 
     &--img {

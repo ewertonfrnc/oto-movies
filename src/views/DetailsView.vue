@@ -18,7 +18,7 @@
 
 <script setup lang="ts">
 import { computed, onMounted, ref, watch } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { useRoute } from 'vue-router'
 import { useStore } from 'vuex'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
 import PageHeader from '@/components/PageHeader.vue'
@@ -26,7 +26,6 @@ import DetailsContent from '@/components/DetailsContent.vue'
 
 const store = useStore()
 const route = useRoute()
-const router = useRouter()
 const isFav = ref(false)
 
 const favorites = computed(() => store.state.favorites)
