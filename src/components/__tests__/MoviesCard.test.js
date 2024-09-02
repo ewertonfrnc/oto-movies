@@ -1,10 +1,16 @@
-import { describe, expect, test } from 'vitest'
+import { describe, expect, test, vi } from 'vitest'
 import { mount } from '@vue/test-utils'
 
 import MoviesCard from '@/components/MoviesCard.vue'
 
 import { BASE_TMDB_IMAGE_URL } from '@/utils/tmdb.utils.ts'
 import { decimalToPercentage, formatNumber } from '@/utils/formatters.utils.ts'
+
+const pushMock = vi.fn()
+vi.mock('vue-router', () => ({
+  useRoute: vi.fn(),
+  useRouter: () => ({ push: pushMock })
+}))
 
 const movie = {
   id: 569094,
@@ -67,5 +73,17 @@ describe('MoviesCard.vue', () => {
 
     const voteCountElement = wrapper.find('.card__text--popularity')
     expect(voteCountElement.text()).toContain(formatNumber(movie.popularity))
+  })
+
+  test('should navigate to the movie detail page on card click', async () => {
+    const wrapper = mount(MoviesCard, {
+      props: { movie },
+      global: { stubs: ['router-link'] }
+    })
+
+    const movieCard = wrapper.find('.card')
+
+    expect(movieCard.exists()).toBe(true)
+    expect(movieCard.attributes('to')).toBe(`/movie/${movie.id}`)
   })
 })
