@@ -1,11 +1,25 @@
 <template>
   <ul class="pagination">
     <li class="pagination__item">
-      <button type="button" @click="onClickFirstPage" :disabled="isInFirstPage">&laquo;</button>
+      <button
+        class="pagination__item--first"
+        type="button"
+        @click="onClickFirstPage"
+        :disabled="isInFirstPage"
+      >
+        &laquo;
+      </button>
     </li>
 
     <li class="pagination__item">
-      <button type="button" @click="onClickPreviousPage" :disabled="isInFirstPage">&lsaquo;</button>
+      <button
+        class="pagination__item--previous"
+        type="button"
+        @click="onClickPreviousPage"
+        :disabled="isInFirstPage"
+      >
+        &lsaquo;
+      </button>
     </li>
 
     <li v-for="page in pages" :key="page.name" class="pagination__item">
@@ -20,11 +34,25 @@
     </li>
 
     <li class="pagination__item">
-      <button type="button" @click="onClickNextPage" :disabled="isInLastPage">&rsaquo;</button>
+      <button
+        class="pagination__item--next"
+        type="button"
+        @click="onClickNextPage"
+        :disabled="isInLastPage"
+      >
+        &rsaquo;
+      </button>
     </li>
 
     <li class="pagination__item">
-      <button type="button" @click="onClickLastPage" :disabled="isInLastPage">&raquo;</button>
+      <button
+        class="pagination__item--last"
+        type="button"
+        @click="onClickLastPage"
+        :disabled="isInLastPage"
+      >
+        &raquo;
+      </button>
     </li>
   </ul>
 </template>
