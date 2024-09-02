@@ -13,6 +13,10 @@
       />
 
       <MoviesListing :movies="movies" />
+
+      <div class="btn-container">
+        <button class="btn" @click="toTop">Voltar ao topo</button>
+      </div>
     </template>
   </main>
 </template>
@@ -30,6 +34,13 @@ const store = useStore()
 const movies = ref<TMDBMovie[]>([])
 const totalPages = ref<number>(0)
 const currentPage = ref<number>(1)
+
+function toTop() {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  })
+}
 
 function onPageChange(page: number): void {
   currentPage.value = page
@@ -50,3 +61,11 @@ onMounted(() => {
   loadMovies(currentPage.value)
 })
 </script>
+
+<style scoped lang="scss">
+.btn-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+}
+</style>
