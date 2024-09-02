@@ -75,7 +75,6 @@ npm install
 npm run dev
 ```
 
-[//]: #
 [VueJs]: https://vuejs.org
 [Vuex]: https://vuex.vuejs.org/
 [Vue Router]: https://router.vuejs.org
