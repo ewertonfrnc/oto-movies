@@ -69,6 +69,7 @@ const genres = computed(() => {
 
 <style scoped lang="scss">
 @import '@/assets/styles/abstracts/variables.scss';
+@import '@/assets/styles/abstracts/mixin.scss';
 
 .details {
   position: relative;
@@ -96,6 +97,11 @@ const genres = computed(() => {
     background-color: $black-secondary;
     display: flex;
     gap: 16px;
+
+    @include respond(phone) {
+      flex-direction: column;
+      align-items: center;
+    }
   }
 
   &__specs {

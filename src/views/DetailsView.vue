@@ -22,7 +22,6 @@ import { useRoute, useRouter } from 'vue-router'
 import { useStore } from 'vuex'
 import type { TMDBMovie } from '@/interfaces/movie.interfaces'
 import PageHeader from '@/components/PageHeader.vue'
-import DetailsHeader from '@/components/DetailsContent.vue'
 import DetailsContent from '@/components/DetailsContent.vue'
 
 const store = useStore()
@@ -33,10 +32,6 @@ const isFav = ref(false)
 const favorites = computed(() => store.state.favorites)
 
 const movie = ref<TMDBMovie>(null)
-
-function back() {
-  router.push('/')
-}
 
 watch([favorites, movie], () => {
   if (movie.value) {
