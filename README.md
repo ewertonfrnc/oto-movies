@@ -1,8 +1,6 @@
 # 🎬 Oto Filmes 
 Este projeto permite aos usuários explorar uma lista de filmes melhor avaliados no TMDB, visualizar detalhes de cada filme e gerenciar uma lista de favoritos.
 
-![app preview](https://i.imgur.com/sS5Hp4F.gif)
-
 - [VueJs] - O Framework JavaScript Progressivo;
 - [Vue Router] - O Roteador oficial para Vue.js;
 - [Vuex] - Vuex é um padrão de gerenciamento de estado + biblioteca para aplicações Vue.js;
@@ -40,8 +38,6 @@ npm run dev
 # 🎬 Oto Movies (EN)
 
 This project allows users to explore a list of highly-rated movies on TMDB, view details of each movie, and manage a favorites list.
-
-![app preview](https://i.imgur.com/sS5Hp4F.gif)
 
 - [VueJs] - The Progressive JavaScript Framework;
 - [Vue Router] - The official Router for Vue.js;
