@@ -29,13 +29,13 @@ export const store = createStore<State>({
     }
   },
   mutations: {
-    clearFavorites(state) {
+    clearFavorites(state: State) {
       state.favorites = []
     },
-    addToFavorites(state, movie: TMDBMovie) {
+    addToFavorites(state: State, movie: TMDBMovie) {
       state.favorites = [movie, ...state.favorites]
     },
-    removeFromFavorites(state, movie: TMDBMovie) {
+    removeFromFavorites(state: State, movie: TMDBMovie) {
       state.favorites = state.favorites.filter((favorite) => favorite.id !== movie.id)
     }
   },
